@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import Head from "next/head";
 
@@ -17,6 +18,7 @@ export default function Opening() {
         <main>
           <div className="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">{/* Your content */}</div>
         </main>
+        <Footer />
       </div>
     </>
   );
