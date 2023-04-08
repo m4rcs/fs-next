@@ -1,6 +1,7 @@
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import Head from "next/head";
+import Image from "next/image";
 
 export default function Jobrad() {
   return (
@@ -16,7 +17,23 @@ export default function Jobrad() {
           </div>
         </header>
         <main>
-          <div className="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">{/* Your content */}</div>
+          <div className="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
+            <p className="pt-2 pb-4 px-3">
+              <Image width={500} height={145} src="/jobrad.png" className="mx-auto" alt="" />
+            </p>
+            <p className="pt-2 pb-4 px-3 text-justify">
+              JobRad ist Marktführer im Dienstradleasing und bringt seit mehr als zehn Jahren Menschen aufs Rad. Als
+              Mobilitätsdienstleister organisiert JobRad mit einer digitalen Portallösung unkompliziert und
+              kostenneutral die Dienstradüberlassung zwischen Arbeitgebern, Mitarbeitern und Fahrrad-Fachhändlern.
+            </p>
+            <p className="pt-2 pb-4 px-3 text-justify">
+              <iframe
+                src="https://player.vimeo.com/video/385250211"
+                allowFullScreen
+                className="mx-auto w-96"
+              ></iframe>
+            </p>
+          </div>
         </main>
         <Footer />
       </div>

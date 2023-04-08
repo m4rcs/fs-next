@@ -72,6 +72,7 @@ export default function Navbar() {
               <div className="absolute inset-y-0 right-0 items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0 hidden sm:block">
                 {navigation.map((item) => (
                   <Link
+                    key={item.name}
                     href={item.path}
                     className={classNames(
                       item.path == router.asPath
@@ -92,6 +93,7 @@ export default function Navbar() {
               {navigation.map((item) => (
                 <Link
                   href={item.path}
+                  key={item.name}
                   className={classNames(
                     item.path == router.asPath
                       ? "bg-gray-900 text-white"
