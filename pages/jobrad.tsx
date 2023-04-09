@@ -1,20 +1,11 @@
 import Footer from "@/components/Footer";
-import Navbar from "@/components/Navbar";
-import Head from "next/head";
+import Header from "@/components/Header";
 import Image from "next/image";
 
 export default function Jobrad() {
   return (
     <div className="flex h-full flex-col">
-      <Head>
-        <title>JobRad - Fahrrad Strutt - Rodenbach</title>
-      </Head>
-      <Navbar />
-      <header className="bg-white shadow">
-        <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-          <h1 className="font-logo text-3xl font-bold tracking-tight text-gray-900">JobRad</h1>
-        </div>
-      </header>
+      <Header name="Jobrad" />
       <main className="grow">
         <div className="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
           <p className="px-3 pb-4 pt-2">

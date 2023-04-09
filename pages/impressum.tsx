@@ -1,19 +1,10 @@
 import Footer from "@/components/Footer";
-import Navbar from "@/components/Navbar";
-import Head from "next/head";
+import Header from "@/components/Header";
 
 export default function Impress() {
   return (
     <div className="flex h-full flex-col">
-      <Head>
-        <title>Impressum - Fahrrad Strutt - Rodenbach</title>
-      </Head>
-      <Navbar />
-      <header className="bg-white shadow">
-        <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-          <h1 className="font-logo text-3xl font-bold tracking-tight text-gray-900">Impressum</h1>
-        </div>
-      </header>
+      <Header name="Impressum" />
       <main className="grow">
         <div className="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">{/* Your content */}</div>
       </main>
