@@ -30,6 +30,14 @@
     @apply text-justify;
   }
 
+  td {
+    @apply p-2;
+  }
+
+  tr {
+    @apply border-b;
+  }
+
   #__next {
     @apply h-full;
   }
