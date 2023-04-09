@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Head from "next/head";
 
-interface HeaderProps {
+export interface HeaderProps {
   name: string;
 }
 
@@ -9,7 +9,7 @@ export default function Header(props: HeaderProps) {
   return (
     <>
       <Head>
-        <title>{props.name} - Fahrrad Strutt - Rodenbach</title>
+        <title>{`${props.name} - Fahrrad Strutt - Rodenbach`}</title>
       </Head>
       <Navbar />
       <header className="bg-white shadow">
