@@ -61,15 +61,17 @@ export default function Navbar() {
                 </Disclosure.Button>
               </div>
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-                <div className="flex flex-shrink-0 items-center">
-                  <FontAwesomeIcon icon={faBicycle} className="block h-8 w-auto lg:hidden text-gray-300" />
-                  <FontAwesomeIcon icon={faBicycle} className="hidden h-8 w-auto lg:block text-gray-300" />
-                  <span className="hidden h-8 w-auto lg:block text-gray-300 px-3 text-2xl font-logo">
-                    Fahrrad Strutt
-                  </span>
-                </div>
+                <Link className="no-underline" href="/">
+                  <div className="flex flex-shrink-0 items-center">
+                    <FontAwesomeIcon icon={faBicycle} className="inline-block h-8 w-auto text-gray-300 lg:hidden" />
+                    <FontAwesomeIcon icon={faBicycle} className="hidden h-8 w-auto text-gray-300 lg:inline-block" />
+                    <span className="font-logo hidden h-8 w-auto px-3 text-2xl text-gray-300 lg:inline-block">
+                      Fahrrad Strutt
+                    </span>
+                  </div>
+                </Link>
               </div>
-              <div className="absolute inset-y-0 right-0 items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0 hidden sm:block">
+              <div className="absolute inset-y-0 right-0 hidden items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:block sm:pr-0">
                 {navigation.map((item) => (
                   <Link
                     key={item.name}
@@ -98,7 +100,7 @@ export default function Navbar() {
                     item.path == router.asPath
                       ? "bg-gray-900 text-white"
                       : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                    "block rounded-md px-3 py-2 text-base font-medium"
+                    "block rounded-md px-3 py-2 text-base font-medium no-underline"
                   )}
                 >
                   {item.name}

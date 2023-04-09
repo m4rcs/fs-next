@@ -3,6 +3,33 @@
 @tailwind utilities;
 
 @layer components {
+  a {
+    @apply text-teal-700;
+    @apply underline;
+  }
+
+  a:hover {
+    @apply text-teal-500;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply text-teal-900;
+    @apply font-bold;
+    @apply px-4;
+  }
+
+  p {
+    @apply px-3;
+    @apply pb-4;
+    @apply pt-2;
+    @apply text-justify;
+  }
+
   #__next {
     @apply h-full;
   }
