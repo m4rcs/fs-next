@@ -13,20 +13,20 @@ export default function Bikeleasing() {
         <Navbar />
         <header className="bg-white shadow">
           <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-            <h1 className="text-3xl font-bold tracking-tight text-gray-900 font-logo">Bikeleasing</h1>
+            <h1 className="font-logo text-3xl font-bold tracking-tight text-gray-900">Bikeleasing</h1>
           </div>
         </header>
         <main>
           <div className="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
-            <p className="pt-2 pb-4 px-3">
+            <p className="px-3 pb-4 pt-2">
               <Image width={800} height={167} src="/bikeleasing.png" className="mx-auto" alt="" />
             </p>
-            <p className="pt-2 pb-4 px-3 text-justify">
+            <p className="px-3 pb-4 pt-2 text-justify">
               Dienstradeln erlebt Boom wie nie Dienstfahrräder als Arbeitgeberleistung – an diesem Trend kommt im
               Moment kaum ein Unternehmen mehr vorbei, das mit der Zeit gehen möchte.
             </p>
-            <h3 className="font-bold text-xl text-teal-900 px-4">Einfaches Handling, Vorteile für alle</h3>
-            <p className="pt-2 pb-4 px-3 text-justify">
+            <h3 className="px-4 text-xl font-bold text-teal-900">Einfaches Handling, Vorteile für alle</h3>
+            <p className="px-3 pb-4 pt-2 text-justify">
               Dienstrad-Leasing ist so einfach wie wirkungsvoll: Leasingnehmer ist der Arbeitgeber, die Leasingrate
               trägt der Arbeitnehmer durch den Einbehalt eines Teils des monatlichen Bruttogehalts in Höhe der
               Leasingrate. Die Mitarbeiter kommen zu attraktiven Raten und mit einer Einsparung von bis zu 40 Prozent
