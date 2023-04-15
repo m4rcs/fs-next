@@ -1,0 +1,2 @@
+- https://nextjs.org/docs/advanced-features/ci-build-caching#github-actions
+- https://github.com/vercel/next.js/tree/canary/examples/github-pages

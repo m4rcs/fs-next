@@ -12,33 +12,45 @@ type Brand = {
 };
 
 export const getStaticProps: GetStaticProps<{ brands: Brand[] }> = async () => {
-  const res = await fetch(`https://api.airtable.com/v0/${AIRTABLE_BASE}/${AIRTABLE_BRANDS}`, {
-    method: "GET",
-    headers: {
-      Authorization: `Bearer ${AIRTABLE_TOKEN}`,
-    },
-  });
-  const data = await res.json();
-
-  let brands: Brand[] = [];
-
-  for (const brand of data["records"]) {
-    brands.push({
-      name: brand["fields"]["Name"],
-      url: brand["fields"]["Link"],
-      logo: brand["fields"]["Logo"][0]["url"],
-      logoWidth: brand["fields"]["Logo"][0]["width"],
-      logoHeight: brand["fields"]["Logo"][0]["height"],
+  try {
+    const res = await fetch(`https://api.airtable.com/v0/${AIRTABLE_BASE}/${AIRTABLE_BRANDS}`, {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${AIRTABLE_TOKEN}`,
+      },
     });
-  }
 
-  return { props: { brands: brands } };
+    const data = await res.json();
+
+    if ("error" in data) {
+      console.error(`${data["error"]["type"]}: ${data["error"]["message"]}`);
+      return { notFound: true };
+    }
+
+    let brands: Brand[] = [];
+
+    for (const brand of data["records"]) {
+      brands.push({
+        name: brand["fields"]["Name"],
+        url: brand["fields"]["Link"],
+        logo: brand["fields"]["Logo"][0]["url"],
+        logoWidth: brand["fields"]["Logo"][0]["width"],
+        logoHeight: brand["fields"]["Logo"][0]["height"],
+      });
+    }
+
+    return { props: { brands: brands } };
+  } catch (_ex) {
+    const ex = _ex as TypeError;
+    console.error(`${ex.name}: ${ex.message}`);
+    return { notFound: true };
+  }
 };
 
 export default function Brands({ brands }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <Content name="Marken">
-      <div className="flex flex-wrap justify-center items-center">
+      <div className="flex flex-wrap items-center justify-center">
         {brands.map((brand) => (
           <div key={brand.name} className="m-4">
             <a href={brand.url} target="_blank">
