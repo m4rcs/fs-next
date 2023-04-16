@@ -32,30 +32,30 @@ export default function Home() {
           Wenn Sie Ihr altes Fahrrad loswerden möchten, bieten wir auch eine{" "}
           <span className="font-bold text-teal-900">Ankaufsoption</span> an. Wir nehmen Ihr gebrauchtes Fahrrad gerne
           in Zahlung und helfen Ihnen dabei, das perfekte neue Fahrrad zu finden. Schauen Sie sich auf unserer Webseite
-          um und <Link href="/kontakt">kontaktieren</Link> Sie uns gerne, wenn Sie Fragen haben oder Hilfe benötigen.
+          um und <Link href="./kontakt">kontaktieren</Link> Sie uns gerne, wenn Sie Fragen haben oder Hilfe benötigen.
           Wir freuen uns darauf, Sie bald in unserem{" "}
-          <Link href="/anfahrt" className="font-bold text-teal-900">
+          <Link href="./anfahrt" className="font-bold text-teal-900">
             Fahrradladen
           </Link>{" "}
           begrüßen zu dürfen!
         </p>
         <p>
           Als Fahrradladen mit dem Ziel, Ihnen das beste Fahrraderlebnis zu bieten, haben wir auch die Möglichkeit des{" "}
-          <Link href="/jobrad" className="font-bold text-teal-900">
+          <Link href="./jobrad" className="font-bold text-teal-900">
             JobRads
           </Link>{" "}
           und{" "}
-          <Link href="/bikeleasing" className="font-bold text-teal-900">
+          <Link href="./bikeleasing" className="font-bold text-teal-900">
             Bikeleasings
           </Link>{" "}
           im Angebot. Mit{" "}
-          <Link href="/jobrad" className="font-bold text-teal-900">
+          <Link href="./jobrad" className="font-bold text-teal-900">
             JobRad
           </Link>{" "}
           haben Sie die Möglichkeit, ein hochwertiges Fahrrad zu attraktiven Konditionen zu leasen und es für den
           täglichen Arbeitsweg, Freizeitaktivitäten oder Einkäufe zu nutzen. Das Beste daran ist, dass Sie dabei auch
           noch Steuern sparen können. Unternehmen haben mit dem{" "}
-          <Link href="/bikeleasing" className="font-bold text-teal-900">
+          <Link href="./bikeleasing" className="font-bold text-teal-900">
             Bikeleasing
           </Link>{" "}
           eine attraktive Möglichkeit, ihre Mitarbeiterinnen und Mitarbeiter zu motivieren und für eine gesündere

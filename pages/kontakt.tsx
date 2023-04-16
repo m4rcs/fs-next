@@ -14,7 +14,7 @@ export default function Contact() {
             <p>
               Wir sind jederzeit gerne für Sie da! Auf unserer Kontaktseite finden Sie alle Informationen, die Sie
               benötigen, um mit uns in Verbindung zu treten. Ob per Telefon, E-Mail oder persönlich in unserem{" "}
-              <Link href="/anfahrt">Laden</Link> - wir stehen Ihnen gerne zur Verfügung. Zögern Sie nicht, uns bei
+              <Link href="./anfahrt">Laden</Link> - wir stehen Ihnen gerne zur Verfügung. Zögern Sie nicht, uns bei
               Fragen, Anregungen oder Anliegen zu kontaktieren. Wir freuen uns auf Ihre Nachricht!
             </p>
             <a target="_blank" href="tel:+49618450190">

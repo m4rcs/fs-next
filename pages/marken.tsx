@@ -21,7 +21,7 @@ export default function Brands({ brands }: InferGetStaticPropsType<typeof getSta
           Wir bieten eine große Auswahl an renommierten und bewährten Fahrradmarken an, die sich durch Qualität,
           Innovation und Design auszeichnen. Wir führen eine Vielzahl von Marken, die jedem Budget und jedem Fahrradtyp
           gerecht werden. Unsere Expertinnen und Experten beraten Sie gerne und helfen Ihnen bei der Auswahl des
-          richtigen Fahrrads für Ihre individuellen Bedürfnisse und Vorlieben. <Link href="/anfahrt">Besuchen</Link>{" "}
+          richtigen Fahrrads für Ihre individuellen Bedürfnisse und Vorlieben. <Link href="./anfahrt">Besuchen</Link>{" "}
           Sie uns und entdecken Sie die verschiedenen Marken, die wir anbieten. Wir freuen uns darauf, Ihnen zu helfen,
           das perfekte Fahrrad zu finden!
         </p>

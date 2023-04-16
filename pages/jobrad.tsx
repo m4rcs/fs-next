@@ -12,7 +12,7 @@ export default function Jobrad() {
       <Content name="JobRad" showHeader={false}>
         <h1 className="hidden">JobRad</h1>
         <p>
-          <Image width={500} height={149} src="/jobrad.png" className="mx-auto" alt="" />
+          <Image width={500} height={149} src="./jobrad.png" className="mx-auto" alt="" />
         </p>
         <p>
           JobRad ist Marktführer im Dienstradleasing und bringt seit mehr als zehn Jahren Menschen aufs Rad. Als

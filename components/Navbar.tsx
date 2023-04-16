@@ -21,23 +21,23 @@ function classNames(...classes: string[]) {
 }
 
 const navigation = [
-  { name: "Home", path: "/", icon: <FontAwesomeIcon icon={faHome} /> },
-  { name: "Angebote", path: "/angebote", icon: <FontAwesomeIcon icon={faSign} /> },
-  { name: "Öffnungszeiten", path: "/oeffnungszeiten", icon: <FontAwesomeIcon icon={faClock} /> },
-  { name: "Kontakt", path: "/kontakt", icon: <FontAwesomeIcon icon={faEnvelope} /> },
-  { name: "Marken", path: "/marken", icon: <FontAwesomeIcon icon={faWarehouse} /> },
+  { name: "Home", path: "./", icon: <FontAwesomeIcon icon={faHome} /> },
+  { name: "Angebote", path: "./angebote", icon: <FontAwesomeIcon icon={faSign} /> },
+  { name: "Öffnungszeiten", path: "./oeffnungszeiten", icon: <FontAwesomeIcon icon={faClock} /> },
+  { name: "Kontakt", path: "./kontakt", icon: <FontAwesomeIcon icon={faEnvelope} /> },
+  { name: "Marken", path: "./marken", icon: <FontAwesomeIcon icon={faWarehouse} /> },
   {
     name: "JobRad",
-    path: "/jobrad",
-    icon: <Image width={16} height={16} className="inline-block" src="/jobrad-icon.png" alt="" />,
+    path: "./jobrad",
+    icon: <Image width={16} height={16} className="inline-block" src="./jobrad-icon.png" alt="" />,
   },
   {
     name: "Bikeleasing",
-    path: "/bikeleasing",
-    icon: <Image width={16} height={16} className="inline-block" src="/bikeleasing-icon.png" alt="" />,
+    path: "./bikeleasing",
+    icon: <Image width={16} height={16} className="inline-block" src="./bikeleasing-icon.png" alt="" />,
   },
-  { name: "Anfahrt", path: "/anfahrt", icon: <FontAwesomeIcon icon={faMap} /> },
-  { name: "Impressum", path: "/impressum", icon: <FontAwesomeIcon icon={faParagraph} /> },
+  { name: "Anfahrt", path: "./anfahrt", icon: <FontAwesomeIcon icon={faMap} /> },
+  { name: "Impressum", path: "./impressum", icon: <FontAwesomeIcon icon={faParagraph} /> },
 ];
 
 export default function Navbar() {
@@ -61,11 +61,11 @@ export default function Navbar() {
                 </Disclosure.Button>
               </div>
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-                <Link className="no-underline" href="/">
+                <Link className="no-underline" href="./">
                   <div className="flex flex-shrink-0 items-center">
                     <FontAwesomeIcon icon={faBicycle} className="inline-block h-8 w-auto text-gray-300 lg:hidden" />
                     <FontAwesomeIcon icon={faBicycle} className="hidden h-8 w-auto text-gray-300 lg:inline-block" />
-                    <span className="font-logo hidden h-8 w-auto px-3 text-2xl text-gray-300 lg:inline-block">
+                    <span className="hidden h-8 w-auto px-3 font-logo text-2xl text-gray-300 lg:inline-block">
                       Fahrrad Strutt
                     </span>
                   </div>

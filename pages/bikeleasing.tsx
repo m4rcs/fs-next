@@ -9,7 +9,7 @@ export default function Bikeleasing() {
       <Content name="Bikeleasing" showHeader={false}>
         <h1 className="hidden">Bikeleasing</h1>
         <p>
-          <Image width={800} height={167} src="/bikeleasing.png" className="mx-auto" alt="" />
+          <Image width={800} height={167} src="./bikeleasing.png" className="mx-auto" alt="" />
         </p>
         <p>
           Dienstradeln erlebt Boom wie nie Dienstfahrräder als Arbeitgeberleistung – an diesem Trend kommt im Moment
