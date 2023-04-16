@@ -1,94 +1,34 @@
 import Content from "@/components/Content";
+import Offer from "@/components/Offer";
+import { getOffers } from "@/lib/airtable";
+import { GetStaticProps, InferGetStaticPropsType } from "next";
 
-export default function Offers() {
+export const getStaticProps: GetStaticProps<{ offers: Offer[] }> = async () => {
+  const offers = await getOffers();
+
+  return { props: { offers: offers } };
+};
+
+export default function Offers({ offers }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <Content name="Angebote">
       <div className="flex flex-row flex-wrap justify-center">
-        <div className="m-2 inline-block max-w-[18rem] rounded-lg bg-white">
-          <img
-            className="rounded-t-lg px-1 pt-1"
-            src="https://www.fahrrad-strutt.de/17_Stance_E_EX.dfbb7061.jpg"
-            alt=""
-          />
-          <div className="px-3 pb-3">
-            <h5 className="text-xl text-teal-900">Giant Stance E+ EX</h5>
-            <p className="text-base">E-Fully / Yamaha 70 Nm / 625 Wh</p>
-            <button
-              type="button"
-              className="float-right mb-3 inline-block rounded bg-teal-900 px-6 py-2 align-middle text-lg font-bold leading-tight text-white"
-            >
-              4.299 Euro
-            </button>
-          </div>
-        </div>
-        <div className="m-2 inline-block max-w-[18rem] rounded-lg bg-white">
-          <img
-            className="rounded-t-lg px-1 pt-1"
-            src="https://www.fahrrad-strutt.de/17_Stance_E_EX.dfbb7061.jpg"
-            alt=""
-          />
-          <div className="px-3 pb-3">
-            <h5 className="text-xl text-teal-900">Giant Stance E+ EX</h5>
-            <p className="text-base">E-Fully / Yamaha 70 Nm / 625 Wh</p>
-            <button
-              type="button"
-              className="float-right mb-3 inline-block rounded bg-teal-900 px-6 py-2 align-middle text-lg font-bold leading-tight text-white"
-            >
-              4.299 Euro
-            </button>
-          </div>
-        </div>
-        <div className="m-2 inline-block max-w-[18rem] rounded-lg bg-white">
-          <img
-            className="rounded-t-lg px-1 pt-1"
-            src="https://www.fahrrad-strutt.de/17_Stance_E_EX.dfbb7061.jpg"
-            alt=""
-          />
-          <div className="px-3 pb-3">
-            <h5 className="text-xl text-teal-900">Giant Stance E+ EX</h5>
-            <p className="text-base">E-Fully / Yamaha 70 Nm / 625 Wh</p>
-            <button
-              type="button"
-              className="float-right mb-3 inline-block rounded bg-teal-900 px-6 py-2 align-middle text-lg font-bold leading-tight text-white"
-            >
-              4.299 Euro
-            </button>
-          </div>
-        </div>
-        <div className="m-2 inline-block max-w-[18rem] rounded-lg bg-white">
-          <img
-            className="rounded-t-lg px-1 pt-1"
-            src="https://www.fahrrad-strutt.de/17_Stance_E_EX.dfbb7061.jpg"
-            alt=""
-          />
-          <div className="px-3 pb-3">
-            <h5 className="text-xl text-teal-900">Giant Stance E+ EX</h5>
-            <p className="text-base">E-Fully / Yamaha 70 Nm / 625 Wh</p>
-            <button
-              type="button"
-              className="float-right mb-3 inline-block rounded bg-teal-900 px-6 py-2 align-middle text-lg font-bold leading-tight text-white"
-            >
-              4.299 Euro
-            </button>
-          </div>
-        </div>
-        <div className="m-2 inline-block max-w-[18rem] rounded-lg bg-white">
-          <img
-            className="rounded-t-lg px-1 pt-1"
-            src="https://www.fahrrad-strutt.de/17_Stance_E_EX.dfbb7061.jpg"
-            alt=""
-          />
-          <div className="px-3 pb-3">
-            <h5 className="text-xl text-teal-900">Giant Stance E+ EX</h5>
-            <p className="text-base">E-Fully / Yamaha 70 Nm / 625 Wh</p>
-            <button
-              type="button"
-              className="float-right mb-3 inline-block rounded bg-teal-900 px-6 py-2 align-middle text-lg font-bold leading-tight text-white"
-            >
-              4.299 Euro
-            </button>
-          </div>
-        </div>
+        {offers.length > 0 ? (
+          offers.map((offer) => (
+            <Offer
+              key={offer.id}
+              id={offer.id}
+              description={offer.description}
+              name={offer.name}
+              price={offer.price}
+              image={offer.image}
+              imageHeight={offer.imageHeight}
+              imageWidth={offer.imageWidth}
+            />
+          ))
+        ) : (
+          <h2 className="text-2xl">Keine Angebote</h2>
+        )}
       </div>
     </Content>
   );
