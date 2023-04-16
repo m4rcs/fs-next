@@ -1,4 +1,4 @@
-import { AIRTABLE_BASE, AIRTABLE_BRANDS, AIRTABLE_OFFERS, AIRTABLE_TOKEN } from "@/const";
+import { AIRTABLE_BASE, AIRTABLE_BRANDS, AIRTABLE_OFFERS, AIRTABLE_OPEN, AIRTABLE_TOKEN } from "@/const";
 import * as log from "next/dist/build/output/log";
 
 async function request(url: string, auth: string): Promise<Array<any> | undefined> {
@@ -104,4 +104,38 @@ export async function getOffers(): Promise<Offer[]> {
   }
 
   return offers;
+}
+
+export async function getOpenInfo(): Promise<OpenInfo[]> {
+  const records = await request(
+    `https://api.airtable.com/v0/${AIRTABLE_BASE}/${AIRTABLE_OPEN}`,
+    `Bearer ${AIRTABLE_TOKEN}`
+  );
+
+  if (records === undefined || records.length === 0) {
+    return [];
+  }
+
+  const infos: OpenInfo[] = [];
+
+  for (const r of records) {
+    if ("id" in r && "fields" in r && "Name" in r.fields) {
+      if ("Gültig bis" in r.fields) {
+        const d = Date.parse(r.fields["Gültig bis"]);
+        if (d < Date.now()) {
+          log.warn(`Skipping open info [name=${r["fields"]["Name"]}, valid_to=${r["fields"]["Gültig bis"]}]`);
+          continue;
+        }
+      }
+
+      const info: OpenInfo = {
+        id: r.id,
+        info: r.fields["Name"],
+      };
+
+      infos.push(info);
+    }
+  }
+
+  return infos;
 }

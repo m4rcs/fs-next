@@ -1,9 +1,28 @@
 import Content from "@/components/Content";
+import OpenInfo from "@/components/OpenInfo";
+import { getOpenInfo } from "@/lib/airtable";
+import { GetStaticProps, InferGetStaticPropsType } from "next";
 
-export default function Opening() {
+export const getStaticProps: GetStaticProps<{ infos: OpenInfo[] }> = async () => {
+  const infos = await getOpenInfo();
+
+  return { props: { infos: infos } };
+};
+
+export default function Opening({ infos }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <Content name="Öffnungszeiten">
       <div className="mx-3">
+        {infos.length > 0 ? (
+          <div className="p-5 text-center text-xl font-bold text-red-700">
+            {infos.map((info) => (
+              <OpenInfo key={info.id} id={info.id} info={info.info} />
+            ))}
+          </div>
+        ) : (
+          ""
+        )}
+
         <table className="mx-auto w-full table-auto text-xl lg:w-auto">
           <tbody>
             <tr>
