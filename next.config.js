@@ -3,6 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   output: "export",
   distDir: "dist",
+  basePath: process.env.BASE_PATH,
   images: {
     unoptimized: true,
     dangerouslyAllowSVG: true,
