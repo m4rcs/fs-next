@@ -1,5 +1,5 @@
 import Navbar from "@/components/Navbar";
-import Head from "next/head";
+import { NextSeo } from "next-seo";
 
 export interface HeaderProps {
   name: string;
@@ -10,9 +10,7 @@ export default function Header(props: HeaderProps) {
   const showHeader = props.showHeader ?? true;
   return (
     <>
-      <Head>
-        <title>{`${props.name} - Fahrrad Strutt - Rodenbach`}</title>
-      </Head>
+      <NextSeo title={props.name} openGraph={{ title: props.name }} />
       <Navbar />
       {showHeader && (
         <header className="bg-white shadow">

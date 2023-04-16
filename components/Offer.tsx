@@ -6,7 +6,6 @@ import Lightbox, { RenderSlideProps } from "yet-another-react-lightbox";
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
 
 function NextJsImage({ slide }: RenderSlideProps) {
-  console.log(slide);
   return (
     <div className="text-center">
       <div className="text-2xl font-bold text-teal-500">{slide.alt}</div>

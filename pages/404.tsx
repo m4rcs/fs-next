@@ -1,13 +1,11 @@
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
-import Head from "next/head";
+import { NextSeo } from "next-seo";
 
 export default function FourOhFour() {
   return (
     <div className="flex h-full flex-col">
-      <Head>
-        <title>Seite nicht gefunden - Fahrrad Strutt - Rodenbach</title>
-      </Head>
+      <NextSeo title="Seite nicht gefunden" noindex={true} nofollow={true} />
       <Navbar />
       <main className="grid grow place-items-center bg-white px-6 py-24 sm:py-32 lg:px-8">
         <div className="text-center">
