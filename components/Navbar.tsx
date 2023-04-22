@@ -29,12 +29,12 @@ const navigation = [
   {
     name: "JobRad",
     path: "./jobrad",
-    icon: <Image width={16} height={16} className="inline-block" src="./jobrad-icon.png" alt="" />,
+    icon: <Image width={16} height={16} className="inline-block" src="./jobrad-icon.png" alt="JR" />,
   },
   {
     name: "Bikeleasing",
     path: "./bikeleasing",
-    icon: <Image width={16} height={16} className="inline-block" src="./bikeleasing-icon.png" alt="" />,
+    icon: <Image width={16} height={16} className="inline-block" src="./bikeleasing-icon.png" alt="BL" />,
   },
   { name: "Anfahrt", path: "./anfahrt", icon: <FontAwesomeIcon icon={faMap} /> },
   { name: "Impressum", path: "./impressum", icon: <FontAwesomeIcon icon={faParagraph} /> },
