@@ -11,7 +11,7 @@ export default function App({ Component, pageProps }: AppProps) {
         id="https://www.fahrrad-strutt.de"
         type="LocalBusiness"
         name="Fahrrad Strutt"
-        description="In unserem Fahrradladen mit Werkstatt bieten wir eine breite Auswahl an Fahrrädern, qualifizierte Reparatur- und Wartungsdienstleistungen sowie eine Ankaufsoption für gebrauchte Fahrräder an."
+        description="In unserem Fahrradladen mit Werkstatt bieten wir eine breite Auswahl an Fahrrädern, qualifizierte Reparatur- und Wartungsdienstleistungen an."
         url="https://www.fahrrad-strutt.de"
         telephone="+49 6184 50190"
         address={{

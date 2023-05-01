@@ -8,7 +8,7 @@ import Zoom from "yet-another-react-lightbox/plugins/zoom";
 function NextJsImage({ slide }: RenderSlideProps) {
   return (
     <div className="text-center">
-      <div className="text-2xl font-bold text-teal-500">{slide.alt}</div>
+      <div className="text-2xl font-bold text-lime-500">{slide.alt}</div>
       <Image src={slide.src} width={slide.width} height={slide.height} alt={slide.alt ?? ""} />
     </div>
   );
@@ -42,10 +42,10 @@ export default function Offer(offer: Offer) {
       ) : (
         ""
       )}
-      <h2 className="text-xl text-teal-900">{offer.name}</h2>
+      <h2 className="text-xl text-lime-900">{offer.name}</h2>
       <p className="grow text-center text-base">{offer.description}</p>
       <div className="text-right">
-        <button type="button" className="rounded bg-teal-900 px-6 py-2 align-middle text-lg font-bold text-white">
+        <button type="button" className="rounded bg-lime-900 px-6 py-2 align-middle text-lg font-bold text-white">
           {offer.price.toLocaleString("de-DE", { minimumFractionDigits: 0 })} Euro
         </button>
       </div>
